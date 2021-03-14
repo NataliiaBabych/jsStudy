@@ -955,62 +955,461 @@
 // };
 
 
-// Ex 41
-const atTheOldToad = {
-  potions: [
-    { name: 'Зелье скорости', price: 460 },
-    { name: 'Дыхание дракона', price: 780 },
-    { name: 'Каменная кожа', price: 520 },
-  ],
-  // Пиши код ниже этой строки
-  getPotions() {
-    return this.potions;
-  },
-  addPotion(potionName) {
-    if (this.potions.includes(potionName)) {
-      return `Зелье ${potionName} уже есть в инвентаре!`;
-    }
+// // Ex 41
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Зелье скорости', price: 460 },
+//     { name: 'Дыхание дракона', price: 780 },
+//     { name: 'Каменная кожа', price: 520 },
+//   ],
+//    getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(potionName) {
+//     if (this.potions.includes(potionName)) {
+//       return `Зелье ${potionName} уже есть в инвентаре!`;
+//     }
+//     this.potions.push(potionName);
+//   },
+//   removePotion(potionName) {
+//      for (let i=0; i<this.potions.length; i+=1) {
+//     if (potionName === this.potions[i].name)
+//     {
+//         this.potions.splice(i, 1);
+//     }}
+//   },
+//   updatePotionName(oldName, newName) {
+//     for (let i=0; i<this.potions.length; i+=1) {
+//     if (oldName === this.potions[i].name)
+//     {
+//         this.potions[i].name=newName;
+//     }}
+//   },
+//   // Пиши код выше этой строки
+// };
 
-    this.potions.push(potionName);
-  },
-  removePotion(potionName) {
-    const potionIndex = this.potions.indexOf(potionName);
-
-    if (potionIndex === -1) {
-      return `Зелья ${potionName} нет в инвентаре!`;
-    }
-
-    this.potions.splice(potionIndex, 1);
-  },
-
-  if(this.potions.includes(potionName)) 
-{ return }
-        else {
-            this.potions.push(potionName);
-            return this.potions;
-https://feadvanced29.slack.com/archives/D01NL9BBPJ8/p1614631676006800
-
-
-
-
-
-
-  updatePotionName(oldName, newName) {
-    const potionIndex = this.potions.indexOf(oldName);
-
-    if (potionIndex === -1) {
-      return `Зелья ${oldName} нет в инвентаре!`;
-    }
-
-    this.potions.splice(potionIndex, 1, newName);
-  },
-  // Пиши код выше этой строки
-};
-
-console.log(atTheOldToad.potions);
-atTheOldToad.addPotion({ name: 'Каменная кожа', price: 520 });
 // console.log(atTheOldToad.potions);
-// atTheOldToad.removePotion('Дыхание дракона');
-// console.log(atTheOldToad.potions);
+// atTheOldToad.addPotion({ name: 'Каменная кожа', price: 520 });
+// // console.log(atTheOldToad.potions);
+// // atTheOldToad.removePotion('Дыхание дракона');
+// // console.log(atTheOldToad.potions);
+
+// 41 second variant
+
+// применить for..of :smiley:
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Зелье скорости', price: 460 },
+//     { name: 'Дыхание дракона', price: 780 },
+//     { name: 'Каменная кожа', price: 520 },
+//   ],
+//   // Пиши код ниже этой строки
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     for (const obj of this.potions) {
+//       if (obj.name === newPotion.name) {
+//         return `Зелье ${potionName} уже есть в инвентаре!`;
+//       }
+//     }
+//        this.potions.push(newPotion);
+//   },
+//   removePotion(potionName) {
+//     let count = 0;
+//     let total = 0;
+//     for (const obj of this.potions) {
+//       if (obj.name === potionName) {
+//         this.potions.splice(total,1);
+//         //delete obj.name;
+//         //delete obj.price;
+        	
+//       } else {
+//         count += 1;
+//       }
+//       total += 1;
+//     }
+//     if (count === total) {
+//       return `Зелья ${potionName} нет в инвентаре!`;
+//     }
+//     },
+//   updatePotionName(oldName, newName) {
+//     let count = 0;
+//     let total = 0;
+//     for (const obj of this.potions) {
+//       if (obj.name === oldName) {
+//         obj.name = newName;
+//       } else {
+//         count += 1;
+//       }
+// 		total += 1;
+//     }
+// if (total === count) {
+//         return `Зелья ${oldName} нет в инвентаре!`;
+//       }
+//     },
+//     // Пиши код выше этой строки
+// };
+
+// Module 4
+
+// Ex 1
 
 
+// function makePizza() {
+//   return 'Ваша пицца готовится, ожидайте.';
+// }
+// // Пиши код ниже этой строки
+
+// const result = makePizza();
+// const pointer = makePizza;
+
+
+// Ex 2
+
+// function deliverPizza(pizzaName) {
+//   return `Доставляем пиццу ${pizzaName}.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Пицца ${pizzaName} готовится, ожидайте...`;
+// }
+
+// // Пиши код ниже этой строки
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+
+// Ex 3
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Пицца ${pizzaName} готовится, ожидайте...`);
+//   callback(pizzaName);
+// }
+
+// makePizza('Роял гранд', function deliverPizza(pizzaName) {
+//   console.log(`Доставляем пиццу ${pizzaName}.`);
+// });
+// // Пиши код ниже этой строки
+
+// makePizza('Ультрасыр', function eatPizza(pizzaName) { console.log(`Едим пиццу ${pizzaName}`);});
+
+
+// Ex 4
+
+// const pizzaPalace = {
+//   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+//   order(pizzaName, onSuccess, onError) {
+//     if (this.pizzas.includes(pizzaName)) { 
+//       return onSuccess(pizzaName);
+//     } 
+//     return onError(`В ассортименте нет пиццы с названием ${pizzaName}.`);
+//   },
+// };
+// // Пиши код выше этой строки
+
+// // Колбэк для onSuccess
+// function makePizza(pizzaName) {
+//   return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`;
+// }
+
+// // Колбэк для onError
+// function onOrderError(error) {
+//   return `Ошибка! ${error}`;
+// }
+
+// // Вызовы метода с колбэками
+// pizzaPalace.order('Аль Копчино', makePizza, onOrderError);
+// pizzaPalace.order('Четыре нарезона', makePizza, onOrderError);
+// pizzaPalace.order('Биг майк', makePizza, onOrderError);
+// pizzaPalace.order('Венская', makePizza, onOrderError);
+
+// Ex 5
+
+// const pizzaPalace = {
+//   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+//   // Пиши код ниже этой строки
+//   checkPizza(pizzaName) {
+//     return this.pizzas.includes(pizzaName);
+//   },
+//   order(pizzaName) {
+//     const isPizzaAvailable = this.checkPizza(pizzaName);
+
+//     if (!isPizzaAvailable) {
+//       return `В ассортименте нет пиццы с названием «${pizzaName}».`;
+//     }
+
+//     return `Заказ принят, готовим пиццу «${pizzaName}».`;
+//   },
+//   // Пиши код выше этой строки
+// };
+
+// Ex 6
+
+// const customer = {
+//   username: 'Mango',
+//   balance: 24000,
+//   discount: 0.1,
+//   orders: ['Burger', 'Pizza', 'Salad'],
+//   // Пиши код ниже этой строки
+//   getBalance() {
+//     return this.balance;
+//   },
+//   getDiscount() {
+//     return this.discount;
+//   },
+//   setDiscount(value) {
+//     this.discount = value;
+//   },
+//   getOrders() {
+//     return this.orders;
+//   },
+//   addOrder(cost, order) {
+//     this.balance -= cost - cost * this.discount;
+//     this.orders.push(order);
+//   },
+//   // Пиши код выше этой строки
+// };
+
+// customer.setDiscount(0.15);
+// console.log(customer.getDiscount()); // 0.15
+// customer.addOrder(5000, 'Steak');
+// console.log(customer.getBalance()); // 19750
+// console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak']
+
+// Ex 7
+
+// const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+// ];
+
+// // Пиши код ниже этой строки
+// function composeMessage(position) {
+// return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+// }
+
+// const messages = orders.map(function (order, index, orders) {
+//     return composeMessage.call(order, index + 1);
+// });
+
+// Ex 8
+
+// const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+// ];
+
+// // Пиши код ниже этой строки
+// function composeMessage(position) {
+//   return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+// }
+
+// const messages = orders.map((order, index) =>
+//   composeMessage.apply(order, [index + 1])
+// );
+
+
+// Ex 9
+
+// const pizzaPalace = {
+//   company: 'Pizza Palace',
+// };
+
+// const burgerShack = {
+//   company: 'Burger Shack',
+// };
+
+// function composeMessage(customerName) {
+//   return `${customerName}, всегда рады вас видеть в «${this.company}».`;
+// }
+// // Пиши код ниже этой строки
+
+// const pizzaPalaceComposer = composeMessage.bind(pizzaPalace);
+// const pizzaPalaceMessage = pizzaPalaceComposer('Манго');
+
+// const burgerShackComposer = composeMessage.bind(burgerShack);
+// const burgerShackMessage = burgerShackComposer('Поли');
+
+
+// Ex 10
+
+
+// const service = {
+//   mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
+//   subscribe(email) {
+//     this.mailingList.push(email);
+//     return `Почта ${email} добавлена в рассылку.`;
+//   },
+//   unsubscribe(email) {
+//     this.mailingList = this.mailingList.filter((e) => e !== email);
+//     return `Почта ${email} удалена из рассылки.`;
+//   },
+// };
+
+// function logAndInvokeAction(email, action) {
+//   console.log(`Выполняем действие с ${email}.`);
+//   return action(email);
+// }
+
+// const firstInvoke = logAndInvokeAction('kiwi@mail.uk', service.subscribe.bind(service));
+// console.log(firstInvoke);
+// // Почта kiwi@mail.uk добавлена в рассылку.
+
+// console.log(service.mailingList);
+// /* ['mango@mail.com', 
+//     'poly@hotmail.de', 
+//     'ajax@jmail.net', 
+//     'kiwi@mail.uk']*/
+// const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe.bind(service));
+// console.log(secondInvoke);
+// // Почта poly@hotmail.de удалена из рассылки.
+
+// console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']
+
+// Module 5
+
+// Ex 1
+
+// const parent = {
+//   name: 'Stacey',
+//   surname: 'Moore',
+//   age: 54,
+//   heritage: 'Irish'
+// };
+// // Пиши код ниже этой строки
+
+// const child = Object.create(parent);
+
+// // Пиши код выше этой строки
+// child.name = 'Jason';
+// child.age = 27;
+
+// Ex 2
+
+// const ancestor = {
+//   name: 'Paul',
+//   age: 83,
+//   surname: 'Dawson',
+//   heritage: 'Irish'
+// };
+// // Пиши код ниже этой строки
+
+// const parent = Object.create(ancestor);
+// parent.name = 'Stacey';
+// parent.surname = 'Moore';
+// parent.age = 54;
+
+// const child = Object.create(parent);
+// child.name = 'Jason';
+// child.age = 27;
+
+// // Пиши код выше этой строки
+
+// Ex 3
+
+// function Car(brand, model, price) {
+// this.brand = brand;
+// this.model = model;
+// this.price = price;  
+// }
+
+// Ex 4
+
+// function Car({brand, model, price}) {
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// }
+
+// Ex 5
+
+// function Car({ brand, model, price }) {
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// }
+
+// Car.prototype.getPrice = function (){
+// return this.price;
+// };
+
+// Car.prototype.changePrice = function (newPrice) {
+//   this.price = newPrice;
+// };
+
+// Ex 6
+
+// function Storage (items) {
+//   this.items = items;
+// };
+
+// Storage.prototype.getItems = function () {
+// return this.items};
+
+// Storage.prototype.addItem = function (newItem) {
+// this.items.push(newItem)};
+
+// Storage.prototype.removeItem = function (item) {
+// const potionIndex = this.items.indexOf(item);
+// this.items.splice(potionIndex, 1);
+// };
+
+// // Пиши код выше этой строки
+// const storage = new Storage(['Нанитоиды', 'Пролонгер', 'Антигравитатор']);
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+// storage.addItem('Дроид');
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+// storage.removeItem('Пролонгер');
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+
+// Ex 7
+
+//     function StringBuilder (baseValue) {
+//     this.value = baseValue;
+//     };
+
+//     StringBuilder.prototype.getValue = function () {
+//     return this.value;
+//     };
+
+//     StringBuilder.prototype.padEnd = function (str) {
+//         this.value = this.value + str;
+//         return this.value
+//     };
+
+//     StringBuilder.prototype.padStart = function (str) {
+//         this.value = str + this.value;
+//         return this.value
+//     };
+
+
+//     StringBuilder.prototype.padBoth = function (str) {
+//     this.value = str + this.value + str;
+//     return this.value
+//     };
+
+// // Пиши код выше этой строки
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // '.'
+// builder.padStart('^');
+// console.log(builder.getValue()); // '^.'
+// builder.padEnd('^');
+// console.log(builder.getValue()); // '^.^'
+// builder.padBoth('=');
+// console.log(builder.getValue()); // '=^.^='
+
+// Ex 8
+// Ex 9
+// Ex 10
+// Ex 11
+// Ex 12
+// Ex 13
+// Ex 14
+// Ex 15
+// Ex 16
+// Ex 17
+// Ex 18
+// Ex 19
