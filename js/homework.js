@@ -2411,12 +2411,132 @@
 // const totalAveragePlaytimePerGame = players.reduce ((total, player) => {
 // return total + player.playtime/player.gamesPlayed},0);
 
-
 // Ex 32
+
+// Пиши код ниже этой строки
+// const calculateTotalBalance = users => users.reduce((total, user) => {
+// return total + user.balance},0);
+// // Пиши код выше этой строки
+
 // Ex 33
+
+// Пиши код ниже этой строки
+// const getTotalFriendCount = users => users.reduce((total, user) => {
+// return total + user.friends.length},0);
+// Пиши код выше этой строки
+
 // Ex 34
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   'Ли Танит',
+//   'Бернард Корнуэлл',
+//   'Роберт Шекли',
+//   'Федор Достоевский'
+// ];
+// // Пиши код ниже этой строки
+
+// const ascendingReleaseDates = [...releaseDates].sort();
+
+// const alphabeticalAuthors = [...authors].sort();
+
 // Ex 35
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// // Пиши код ниже этой строки
+
+// const ascendingReleaseDates = [...releaseDates].sort((firstEl, secondEl) => firstEl - secondEl);
+
+// const descendingReleaseDates = [...releaseDates].sort((firstEl, secondEl) => secondEl - firstEl);
+
 // Ex 36
+
+// const authors = [
+//     'Ли Танит',
+//     'Бернард Корнуэлл',
+//     'Роберт Шекли',
+//     'Федор Достоевский',
+//     'Говард Лавкрафт'
+//   ];
+//   // Пиши код ниже этой строки
+  
+//   const authorsInAlphabetOrder = [...authors].sort((a,b) => a.localeCompare(b));
+  
+//   const authorsInReversedOrder = [...authors].sort((a,b) => b.localeCompare(a));
+
 // Ex 37
+
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//   { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+// ];
+// // Пиши код ниже этой строки
+
+// const sortedByAuthorName = [...books].sort((firstBook, secondBook) => firstBook.author.localeCompare(secondBook.author));
+
+// const sortedByReversedAuthorName = [...books].sort((firstBook, secondBook) => secondBook.author.localeCompare(firstBook.author));
+
+// const sortedByAscendingRating = [...books].sort((firstBook, secondBook) => firstBook.rating - secondBook.rating);
+
+// const sortedByDescentingRating = [...books].sort((firstBook, secondBook) => secondBook.rating - firstBook.rating);
+
 // Ex 38
+
+// Пиши код ниже этой строки
+// const sortByAscendingBalance = users => [...users].sort((firstUser, secondUser) => firstUser.balance - secondUser.balance);
+// Пиши код выше этой строки
+
 // Ex 39
+
+// Пиши код ниже этой строки
+// const sortByDescendingFriendCount = users => [...users].sort((firstUser, secondUser) => 
+// secondUser.friends.length - firstUser.friends.length);
+// Пиши код выше этой строки
+
+// Ex 40
+
+// Пиши код ниже этой строки
+// const sortByName = users => [...users].sort((firstUser, secondUser) => firstUser.name.localeCompare(secondUser.name));
+// Пиши код выше этой строки
+
+// Ex 41
+
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 8.14 },
+//   { title: 'Сны В Ведьмином Доме', author: 'Говард Лавкрафт', rating: 8.67 }
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Пиши код ниже этой строки
+
+// const names = books.filter(book => book.rating > MIN_BOOK_RATING)
+// .map((book) => book.author)
+// .sort((firstName, secondName) => firstName.localeCompare(secondName));
+
+// Ex 42
+
+// Пиши код ниже этой строки
+// const getNamesSortedByFriendCount = users => [...users].sort((firstUser, secondUser) => firstUser.friends.length - secondUser.friends.length)
+// .map(user => user.name);
+// Пиши код выше этой строки
+
+// Ex 43
+
+// Пиши код ниже этой строки
+// const getSortedFriends = users => users.flatMap(user => user.friends)
+// .filter((friend, index, array) => array.indexOf(friend) === index)
+// .sort((firstFriend, secondFriend) => firstFriend.localeCompare(secondFriend)); 
+// Пиши код выше этой строки
+
+// Ex 44
+
+// Пиши код ниже этой строки
+// const getTotalBalanceByGender = (users, gender) => users.filter(user => user.gender === gender)
+// .reduce((total, user) => {
+// return total + user.balance},0);
+// Пиши код выше этой строки
